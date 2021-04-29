@@ -14,7 +14,7 @@ const Detail = (props)=> {
                 if (doc.exists){
                     setDetailData(doc.data());
                 } else {
-                    console.log("no sch document in firebase!");
+                    console.log("no such document in firebase!");
                 }
             })
             .catch((error)=>{

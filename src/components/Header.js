@@ -62,30 +62,30 @@ const Header = (props) => {
       :
       <>
       
-       
+    
       <NavMenu>
         <a href="/home">
           <img src="/images/home-icon.svg" alt="HOME" />
           <span>HOME</span>
         </a>
-        <a>
+        <a href="/home">
           <img src="/images/search-icon.svg" alt="SEARCH" />
           <span>SEARCH</span>
         </a>
-        <a>
+        <a href="/home">
           <img src="/images/watchlist-icon.svg" alt="WATCHLIST" />
           <span>WATCHLIST</span>
         </a>
-        <a>
+        <a href="/home">
           <img src="/images/original-icon.svg" alt="ORIGINALS" />
           <span>ORIGINALS</span>
         </a>
-        <a>
+          <a href="/home">
           <img src="/images/movie-icon.svg" alt="MOVIES" />
           <span>MOVIES</span>
         </a>
       </NavMenu>
-      <SignOut>
+           <SignOut>
       <UserImg src={userPhoto} alt={userName} />
       <DropDown>
         <span onClick={handleAuth}>Sign out</span>
@@ -157,6 +157,9 @@ const NavMenu = styled.div`
       padding: 2px 0px;
       white-space: nowrap;
       position: relative;
+      @media (max-width: 768px){
+        display:none;
+      }
 
       &:before {
         background-color: rgb(249, 249, 249);
@@ -183,9 +186,6 @@ const NavMenu = styled.div`
       }
     }
   }
-  /* @media (max-width: 768px) {
-    display: none;
-  } */
 `;
 
 const Login = styled.a`
@@ -205,10 +205,11 @@ const Login = styled.a`
 `;
 
 const UserImg = styled.img`
-height: 100%
+height: 100%;
 `;
 
 const DropDown = styled.div`
+display: grid;
 position: absolute;
 top: 48px;
 right: 0px;
@@ -244,5 +245,8 @@ ${UserImg}{
   }
 }
 `;
+
+
+
 
 export default Header;
